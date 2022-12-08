@@ -101,12 +101,12 @@ helm upgrade --install merrychristmas bitnami/nginx \
   --timeout 600s \
   --set global.storageClass="localPath" \
   --set cloneStaticSiteFromGit.enabled=true \
-  --set cloneStaticSiteFromGit.repository="https://github.com/cmeyer29/web-development.git" \
+  --set cloneStaticSiteFromGit.repository="https://github.com/cmeyer29/scratch-on-k3s.git" \
   --set cloneStaticSiteFromGit.branch="master" \
   --set cloneStaticSiteFromGit.interval=3600 \
   --set service.type="ClusterIP" \
   --set ingress.enabled=true \
-  --set ingress.hostname="merrychristmas.tlrz.local" \
+  --set ingress.hostname="merrychristmas.local" \
   --set ingress.path="/"  \
   --set ingress.ingressClassName="traefik"
 ```
@@ -114,10 +114,11 @@ helm upgrade --install merrychristmas bitnami/nginx \
 ### DNS Configuration on the host
 you need to set a dns entry in the hosts data /etc/hosts 
 ```bash
-sudo sed -i '/^127.0.0.1/ s/$/ merrychristmas.tlrz.local /' /etc/hosts
+sudo sed -i '/^127.0.0.1/ s/$/ merrychristmas.local /' /etc/hosts
 ```
 
 ### DNS Configuration within the CoreDNS ConfigMap
+You need the set an entry within the CoreDNS ConfigMap for a functioning DNS Resolution
 ```bash
 kubectl edit cm -n kube-system coredns
 ```
