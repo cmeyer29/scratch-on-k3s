@@ -139,7 +139,7 @@ curl -k http://merrychristmas.toyou
 ```bash
 firefox --new-window http://merrychristmas.toyou
 ```
-
+![Image](src:images/christmas-game.jpg)
 ### Deinstall nginx
 ```bash
 helm uninstall merrychristmas -n merrychristmas 
