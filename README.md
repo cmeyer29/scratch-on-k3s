@@ -140,7 +140,7 @@ curl -k http://merrychristmas.toyou
 firefox --new-window http://merrychristmas.toyou
 ```
 
-<img src="https://github.com/cmeyer29/scratch-on-k3s/blob/main/images/christmas-game.jpg" width="200"/>
+<img src="https://github.com/cmeyer29/scratch-on-k3s/blob/main/images/christmas-game.jpg" width="600"/>
 
 ### Deinstall nginx
 ```bash
