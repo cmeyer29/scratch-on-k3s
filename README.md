@@ -141,6 +141,9 @@ firefox --new-window http://merrychristmas.toyou
 ```
 
 ![Image](https://github.com/cmeyer29/scratch-on-k3s/blob/main/images/christmas-game.jpg | width=200)
+
+<img src="https://camo.githubusercontent.com/..." data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="200" height="400" />
+
 ### Deinstall nginx
 ```bash
 helm uninstall merrychristmas -n merrychristmas 
