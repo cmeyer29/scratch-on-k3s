@@ -58,12 +58,13 @@ kubectl get pods --all-namespace
 echo "#####################"
 echo "#####################"
 echo "#####################"
-echo "die KUBECONFIG Variable muss manuell gesetzt werden! Dafür folgenden Befehl ausführen!"
+echo "theKUBECONFIG variabel must be set manually! Please execute the following command!"
 echo "export KUBECONFIG="/etc/rancher/k3s/k3s.yaml" "
 
 ```
 ### Helm Installation
-Für die Installation von helm müssen die folgenden Schritte ausgeführt werden. Das Skript kann verwendet werden.
+In order to install helm you can use the following script
+
 ```bash
 export ARCH="amd64"
 export ARCH_X=$(uname -m)
@@ -93,6 +94,7 @@ sudo ln -s /usr/local/bin/helm /usr/local/bin/helm3
 helm list --all-namespaces
 ```
 ### Installing the nginx Webserver-Deployments
+For the deployment we are using the standard public nginx helm charts from bitnami. You can optionally fetch the whole chart data from the repository.
 ```bash
 helm repo add bitnami https://charts.bitnami.com/bitnami
 helm upgrade --install merrychristmas bitnami/nginx \
@@ -123,7 +125,7 @@ You need the set an entry within the CoreDNS ConfigMap for a functioning DNS Res
 kubectl edit cm -n kube-system coredns
 ```
 ### Reloading the CoreDNS ConfigMap
-in Order to reload the changed ConfigMap we have to delete the current CoreDNS pod
+in order to reload the changed ConfigMap we have to delete the current CoreDNS pod
 ```bash
 kubectl delete pods -n kube-system $(kubectl get pods -n kube-system | grep -i coredns | cut -d' ' -f1)
 ```
