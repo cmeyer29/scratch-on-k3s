@@ -140,7 +140,7 @@ curl -k http://merrychristmas.toyou
 firefox --new-window http://merrychristmas.toyou
 ```
 
-![Image](https://github.com/cmeyer29/scratch-on-k3s/blob/main/images/christmas-game.jpg)
+![Image](https://github.com/cmeyer29/scratch-on-k3s/blob/main/images/christmas-game.jpg | width=200)
 ### Deinstall nginx
 ```bash
 helm uninstall merrychristmas -n merrychristmas 
