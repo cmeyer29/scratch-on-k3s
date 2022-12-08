@@ -108,7 +108,7 @@ helm upgrade --install merrychristmas bitnami/nginx \
   --set cloneStaticSiteFromGit.interval=3600 \
   --set service.type="ClusterIP" \
   --set ingress.enabled=true \
-  --set ingress.hostname="merrychristmas.local" \
+  --set ingress.hostname="merrychristmas.toyou" \
   --set ingress.path="/"  \
   --set ingress.ingressClassName="traefik"
 ```
@@ -116,7 +116,7 @@ helm upgrade --install merrychristmas bitnami/nginx \
 ### DNS Configuration on the host
 you need to set a dns entry in the hosts data /etc/hosts 
 ```bash
-sudo sed -i '/^127.0.0.1/ s/$/ merrychristmas.local /' /etc/hosts
+sudo sed -i '/^127.0.0.1/ s/$/ merrychristmas.toyou /' /etc/hosts
 ```
 
 ### DNS Configuration within the CoreDNS ConfigMap
@@ -133,11 +133,11 @@ kubectl delete pods -n kube-system $(kubectl get pods -n kube-system | grep -i c
 ### Testing
 Testing via Curl
 ```bash
-curl -k http://merrychristmas.tlrz.local
+curl -k http://merrychristmas.toyou
 ```
 ### Starting the site 
 ```bash
-firefox --new-window http://merrychristmas.tlrz.local
+firefox --new-window http://merrychristmas.toyou
 ```
 
 ### Deinstall nginx
@@ -155,4 +155,3 @@ helm uninstall merrychristmas -n merrychristmas
 - [helm Installation](https://helm.sh/docs/helm/helm_install/)
 - [Bitnami Nginx Helm Chart](https://github.com/bitnami/charts/tree/main/bitnami/nginx/)
 - [Scratch 3.0](https://scratch.mit.edu/)
-
