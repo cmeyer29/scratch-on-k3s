@@ -104,7 +104,7 @@ helm upgrade --install merrychristmas bitnami/nginx \
   --set global.storageClass="localPath" \
   --set cloneStaticSiteFromGit.enabled=true \
   --set cloneStaticSiteFromGit.repository="https://github.com/cmeyer29/scratch-on-k3s.git" \
-  --set cloneStaticSiteFromGit.branch="master" \
+  --set cloneStaticSiteFromGit.branch="main" \
   --set cloneStaticSiteFromGit.interval=3600 \
   --set service.type="ClusterIP" \
   --set ingress.enabled=true \
