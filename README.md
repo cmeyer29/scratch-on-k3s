@@ -58,7 +58,7 @@ kubectl get pods --all-namespace
 echo "#####################"
 echo "#####################"
 echo "#####################"
-echo "theKUBECONFIG variabel must be set manually! Please execute the following command!"
+echo "theKUBECONFIG variable must be set manually! Please execute the following command!"
 echo "export KUBECONFIG="/etc/rancher/k3s/k3s.yaml" "
 
 ```
