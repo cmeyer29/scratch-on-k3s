@@ -2,7 +2,7 @@
 This repo describes how to implement a scratch game compiled to html within a nginx web server running on a k3s single node cluster
 
 ## Prerequisites
-You need a small Virtual Machine with Ubuntu Desktop 22.04 LTS.
+- You need a small Virtual Machine with Ubuntu Desktop 22.04 LTS.
 
 ## Overview
 For deploying the game there are several task to do
@@ -12,8 +12,9 @@ For deploying the game there are several task to do
 - DNS Entry configuration (if you do not a have a DNS Server instead)
 - Starting the Website
 
-## k3s Deployment
-### Installing a standard k3s Single-Node-Clusters 
+# k3s Single-Node Deployment
+## Create the k3s installer script 
+### Copy the following script into a new file k3s-install.sh
 
 ```bash
 ## https://github.com/k3s-io/k3s/releases
@@ -49,7 +50,16 @@ EOF
 sudo systemctl restart k3s
 
 ```
-## k3s Testing and Configuration
+### Change the recently created script to an executable file
+```bash
+chmod +x k3s-install.sh
+``
+### Execute the installer script
+```bash
+./k3s-install.sh
+``
+
+### k3s Testing and Configuration
 ```bash
 sudo systemctl status k3s -l
 kubectl get nodes -A
