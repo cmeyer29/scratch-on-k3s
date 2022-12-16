@@ -12,10 +12,8 @@ For deploying the game there are several task to do
 - DNS Entry configuration (if you do not a have a DNS Server instead)
 - Starting the Website
 
-# k3s Single-Node Deployment
 ## Create the k3s installer script 
-### Copy the following script into a new file k3s-install.sh
-
+### Copy the following code into a new file k3s-install.sh
 ```bash
 ## https://github.com/k3s-io/k3s/releases
 ## https://docs.k3s.io/security/hardening-guide
@@ -53,12 +51,12 @@ sudo systemctl restart k3s
 ### Change the recently created script to an executable file
 ```bash
 chmod +x k3s-install.sh
-``
+```
+
 ### Execute the installer script
 ```bash
 ./k3s-install.sh
 ``
-
 ### k3s Testing and Configuration
 ```bash
 sudo systemctl status k3s -l
@@ -70,8 +68,8 @@ echo "#####################"
 echo "#####################"
 echo "theKUBECONFIG variable must be set manually! Please execute the following command!"
 echo "export KUBECONFIG="/etc/rancher/k3s/k3s.yaml" "
-
 ```
+
 ### Helm Installation
 In order to install helm you can use the following script
 
@@ -103,10 +101,15 @@ sudo chmod 755 /usr/local/bin/helm
 sudo ln -s /usr/local/bin/helm /usr/local/bin/helm3
 helm list --all-namespaces
 ```
+
 ### Installing the nginx Webserver-Deployments
 For the deployment we are using the standard public nginx helm charts from bitnami. You can optionally fetch the whole chart data from the repository.
 ```bash
 helm repo add bitnami https://charts.bitnami.com/bitnami
+```
+
+Copy and Paste the following code into the terminal and execute it.
+```bash
 helm upgrade --install merrychristmas bitnami/nginx \
   --namespace merrychristmas \
   --create-namespace \
